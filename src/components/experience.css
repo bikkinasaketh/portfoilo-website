@@ -1,0 +1,80 @@
+/* Section Styles */
+#experience {
+  padding: 60px 20px;
+  background: #f9fafb; /* light background */
+}
+
+.section-title {
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  color: #1e3a8a; /* dark blue */
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.section-title::after {
+  content: "";
+  width: 60px;
+  height: 3px;
+  background: #2563eb; /* blue underline */
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+/* Container */
+.experience-container {
+  display: grid;
+  gap: 25px;
+  grid-template-columns: 1fr;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .experience-container {
+    grid-template-columns: 1fr 1fr; /* 2-column layout on medium screens */
+  }
+}
+
+/* Cards */
+.experience-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 20px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+.experience-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* Card Content */
+.role {
+  font-size: 18px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 5px;
+}
+
+.company {
+  font-size: 16px;
+  color: #374151;
+  margin-bottom: 6px;
+}
+
+.meta {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 10px;
+}
+
+.details {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #374151;
+}
