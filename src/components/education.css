@@ -1,53 +1,51 @@
+/* education.css */
+
+/* Section Styles */
 .education-section {
-  padding: 60px 20px;
-  background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
-  color: #f5f5f5;
-  text-align: center;
+  width: 100%;
   min-height: 100vh;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: url('../assets/images/bg.jpg') no-repeat center center/cover;
 }
 
 .section-heading {
   font-size: 2.5rem;
-  margin-bottom: 40px;
-  color: #00d4ff;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  position: relative;
+  color: #0d1475;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+  margin-bottom: 2rem;
+  text-align: center;
 }
 
-.section-heading::after {
-  content: "";
-  display: block;
-  width: 80px;
-  height: 4px;
-  background: #00d4ff;
-  margin: 10px auto 0;
-  border-radius: 2px;
-}
-
+/* Container for cards */
 .edu-cards {
-  display: grid;
-  gap: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
   max-width: 900px;
-  margin: 0 auto;
 }
 
+/* Individual Education Card - Glassmorphism */
 .edu-card {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 16px;
-  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  padding: 1.5rem 2rem;
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(10px);
+  transition: 0.3s ease;
 }
 
 .edu-card:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.8);
-  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
 }
 
+/* Header of the card */
 .edu-header {
   display: flex;
   justify-content: space-between;
@@ -57,146 +55,102 @@
 
 .edu-title {
   font-size: 1.5rem;
-  color: #ffb703;
-  margin-bottom: 5px;
+  color: #331896;
+  margin-bottom: 0.2rem;
 }
 
 .edu-course {
-  font-size: 1.1rem;
-  color: #f5f5f5;
-  font-style: italic;
+  font-size: 1rem;
+  color: #1f0a7c;
+  margin-bottom: 0.2rem;
 }
 
 .edu-meta {
-  font-size: 0.95rem;
-  color: #aaa;
-}
-
-.edu-year {
-  background: #00d4ff;
-  color: #000;
-  font-weight: bold;
-  padding: 6px 12px;
-  border-radius: 20px;
   font-size: 0.9rem;
-  margin-right: 10px;
+  color: #cccccc;
 }
 
-.edu-score {
-  color: #ffdd00;
-  font-size: 1rem;
+/* Right side - year, score, chevron */
+.edu-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.3rem;
+}
+
+.edu-year, .edu-score {
+  color: #111996;
+  font-weight: 500;
+  font-size: 0.95rem;
 }
 
 .chevron {
   display: inline-block;
-  width: 10px;
-  height: 10px;
-  border-right: 2px solid #fff;
-  border-bottom: 2px solid #fff;
-  margin-left: 10px;
-  transform: rotate(45deg);
+  width: 0;
+  height: 0;
+  margin-top: 5px;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid #ffffff;
   transition: transform 0.3s ease;
 }
 
 .chevron.up {
-  transform: rotate(-135deg);
+  transform: rotate(180deg);
 }
 
+/* Expanded Card Body */
 .edu-body {
-  margin-top: 15px;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-  padding-top: 15px;
-  animation: fadeIn 0.4s ease-in-out;
+  margin-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  padding-top: 1rem;
 }
 
 .edu-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
-  text-align: left;
+  gap: 2rem;
 }
 
-.edu-info,
-.edu-highlights {
+.edu-info, .edu-highlights {
   flex: 1;
   min-width: 250px;
+  color: #1925c5;
+}
+
+.edu-info p {
+  margin: 0.3rem 0;
+  font-size: 0.95rem;
+}
+
+.edu-info strong {
+  color: #40309c;
 }
 
 .edu-highlights strong {
-  color: #00d4ff;
+  font-size: 1rem;
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 0.5rem;
 }
 
 .edu-highlights ul {
-  list-style: disc;
-  padding-left: 20px;
+  list-style-type: disc;
+  padding-left: 1.2rem;
 }
 
 .edu-highlights li {
-  margin-bottom: 8px;
+  margin-bottom: 0.3rem;
   font-size: 0.95rem;
-  color: #ddd;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
+/* Responsive */
+@media (max-width: 768px) {
+  .edu-grid {
+    flex-direction: column;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+
+  .edu-right {
+    align-items: flex-start;
+    margin-top: 0.5rem;
   }
-}
-.education-section {
-  padding: 60px 20px;
-  background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
-  color: #fff; /* all text white */
-  text-align: center;
-  min-height: 100vh;
-}
-
-/* Heading */
-.section-heading {
-  font-size: 2.5rem;
-  margin-bottom: 40px;
-  color: #00d4ff; /* keep highlight blue */
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  position: relative;
-}
-
-/* Cards */
-.edu-card {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 16px;
-  padding: 20px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(10px);
-  color: #fff; /* ensure inside card text is white */
-}
-
-.edu-title {
-  font-size: 1.5rem;
-  color: #ffb703; /* highlight title yellow-orange */
-}
-
-.edu-course,
-.edu-meta,
-.edu-score,
-.edu-highlights li {
-  color: #fff !important; /* force white text */
-}
-
-.edu-year {
-  background: #00d4ff;
-  color: #000; /* keep black for contrast */
-  font-weight: bold;
-  padding: 6px 12px;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  margin-right: 10px;
 }

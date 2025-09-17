@@ -1,125 +1,152 @@
+/* Home.css */
 
+/* Section Background */
 .home-section {
+  width: 100%;
   min-height: 100vh;
   display: flex;
-  align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #74ebd5, #9face6);
-  padding: 40px 20px;
+  align-items: center;
+  background: url('../assets/images/bg.jpg') no-repeat center center/cover;
+  padding: 2rem;
 }
 
-
+/* Glassmorphism Hero Card */
 .hero {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 40px;
-  background: #95d9e2;
-  padding: 40px;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  flex-wrap: wrap;
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent */
+  backdrop-filter: blur(15px);          /* Blur effect */
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 20px;                  /* Rounded corners */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25); /* Soft shadow */
+  padding: 2rem;
   max-width: 1000px;
   width: 100%;
 }
 
+/* Hero Left - Image */
 .hero-left {
   flex: 1;
+  min-width: 280px;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.hero-left img.hero-img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Hero Right - Content */
+.hero-right {
+  flex: 1;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  text-align: center;
+}
+
+/* Pill Text */
+.hero-right .pill {
+  background: rgba(255, 255, 255, 0.3);
+  padding: 0.4rem 1rem;
+  border-radius: 50px;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  backdrop-filter: blur(10px);
+  color: #110303;
+}
+
+/* Heading */
+.hero-right h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #080202;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Paragraph */
+.hero-right p {
+  color: #0f0d05;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+/* Hero Buttons */
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.hero-actions .btn {
+  padding: 0.7rem 1.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 500;
+  color: #050c05;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: 0.3s ease;
+}
+
+.hero-actions .btn:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.hero-actions .btn.ghost {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* Social Links */
+.social-links {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
   justify-content: center;
 }
 
-.hero-img {
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  object-fit: cover;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+.social-icon {
+  color: #9b1717;
+  font-size: 1.5rem;
+  transition: 0.3s ease;
 }
 
-.hero-right {
-  flex: 2;
+.social-icon:hover {
+  color: #0e76a8; /* LinkedIn blue hover */
+  transform: scale(1.1);
 }
 
-.pill {
-  display: inline-block;
-  background: #222;
-  color: #fff;
-  padding: 6px 14px;
-  border-radius: 30px;
-  font-size: 14px;
-  margin-bottom: 20px;
-}
-
-h1 {
-  font-size: 36px;
-  margin-bottom: 15px;
-  color: #222;
-}
-
-p {
-  font-size: 25px;
-  color: #555;
-  margin-bottom: 25px;
-  line-height: 1.6;
-}
-
-.hero-actions {
-  display: flex;
-  gap: 15px;
-}
-
-.btn {
-  background: #222;
-  color: #fff;
-  padding: 12px 24px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: 500;
-  transition: 0.3s;
-}
-
-.btn:hover {
-  background: #444;
-}
-
-.btn.ghost {
-  background: transparent;
-  color: #222;
-  border: 2px solid #222;
-}
-
-.btn.ghost:hover {
-  background: #222;
-  color: #fff;
-}
-
-
+/* Responsive */
 @media (max-width: 768px) {
   .hero {
     flex-direction: column;
-    text-align: center;
   }
 
-  .hero-img {
-    width: 180px;
-    height: 180px;
-    margin-bottom: 20px;
+  .hero-left img.hero-img {
+    width: 200px;
+    height: 200px;
   }
 
-  h1 {
-    font-size: 28px;
+  .hero-right h1 {
+    font-size: 2rem;
   }
 
-  p {
-    font-size: 14px;
-  }
-
-  .hero-actions {
-    flex-direction: column;
-  }
-
-  .btn {
-    width: 100%;
-    text-align: center;
+  .hero-right p {
+    font-size: 0.95rem;
   }
 }

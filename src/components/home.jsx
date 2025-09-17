@@ -1,11 +1,13 @@
 import React from "react";
 import "./Home.css";
 import heroImg from "../assets/images/host.jpg";   // <-- import image
+import { FaGithub, FaLinkedin } from "react-icons/fa"; // <-- import icons
 
 const Home = () => {
   return (
     <section id="home" className="home-section">
       <div className="hero card-base">
+        {/* Left Section (Image) */}
         <div className="hero-left">
           <img
             src={heroImg}   // <-- use imported image
@@ -13,6 +15,8 @@ const Home = () => {
             className="hero-img"
           />
         </div>
+
+        {/* Right Section (Content) */}
         <div className="hero-right">
           <div className="pill">Full-Stack Web Developer</div>
           <h1>Bikkina Bhuvan Saketh</h1>
@@ -22,9 +26,31 @@ const Home = () => {
             technologies (MongoDB, Express, React, Node.js) with a focus on
             clean code and modern web practices.
           </p>
+
+          {/* Buttons */}
           <div className="hero-actions">
-            <a href="/contact" className="btn">Contact Me</a>
-            <a href="/experience" className="btn ghost">Experience</a>
+            <a href="#contact" className="btn">Contact Me</a>
+            <a href="#experience" className="btn ghost">Experience</a>
+          </div>
+
+          {/* Social Links */}
+          <div className="social-links">
+            <a
+              href="https://www.linkedin.com/in/bhuvan-saketh-bikkina-12638231a"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+            >
+              <FaLinkedin className="social-icon" />
+            </a>
+            <a
+              href="https://github.com/dashboard"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+            >
+              <FaGithub className="social-icon" />
+            </a>
           </div>
         </div>
       </div>

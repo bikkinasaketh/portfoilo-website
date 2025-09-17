@@ -96,14 +96,15 @@ const EducationCard = ({ item, isOpen, onToggle }) => {
                 <strong>{item.scoreLabel}:</strong> {item.score}
               </p>
             </div>
-            <div className="edu-highlights">
-              <strong>Highlights</strong>
-              <ul>
-                {item.highlights.map((h, i) => (
-                  <li key={i}>{h}</li>
-                ))}
-              </ul>
-            </div>
+           <div className="edu-highlights">
+  <strong>Highlights</strong>
+  <ul>
+    {item.highlights?.map((h, i) => (
+      <li key={i}>{h}</li>
+    )) || <li>No highlights available</li>}
+  </ul>
+</div>
+
           </div>
         </div>
       )}
@@ -119,20 +120,21 @@ const Education = () => {
   };
 
   return (
-    <section className="education-section">
-      <h2 className="section-heading">Education</h2>
+  <section id="education" className="education-section">
+  <h2 className="section-heading">Education</h2>
 
-      <div className="edu-cards">
-        {educationData.map((item) => (
-          <EducationCard
-            key={item.id}
-            item={item}
-            isOpen={openId === item.id}
-            onToggle={() => toggle(item.id)}
-          />
-        ))}
-      </div>
-    </section>
+  <div className="edu-cards">
+    {educationData.map((item) => (
+      <EducationCard
+        key={item.id}
+        item={item}
+        isOpen={openId === item.id}
+        onToggle={() => toggle(item.id)}
+      />
+    ))}
+  </div>
+</section>
+
   );
 };
 
