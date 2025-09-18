@@ -1,156 +1,150 @@
-/* education.css */
-
-/* Section Styles */
+/* === Education Section with Glassmorphism === */
 .education-section {
-  width: 100%;
-  min-height: 100vh;
-  padding: 4rem 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: url('../assets/images/bg.jpg') no-repeat center center/cover;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
 }
 
 .section-heading {
-  font-size: 2.5rem;
-  color: #0d1475;
-  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
-  margin-bottom: 2rem;
   text-align: center;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  letter-spacing: 1px;
+  color: #00c6ff;
 }
 
-/* Container for cards */
+/* Cards Container */
 .edu-cards {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  width: 100%;
-  max-width: 900px;
+  display: grid;
+  gap: 25px;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
-/* Individual Education Card - Glassmorphism */
+/* Individual Card */
 .edu-card {
   background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-  border-radius: 20px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
-  padding: 1.5rem 2rem;
+  backdrop-filter: blur(18px) saturate(180%);
+  -webkit-backdrop-filter: blur(18px) saturate(180%);
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 25px;
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: all 0.4s ease-in-out;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
 .edu-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
 }
 
-/* Header of the card */
+/* Card Header */
 .edu-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
 }
 
 .edu-title {
-  font-size: 1.5rem;
-  color: #331896;
-  margin-bottom: 0.2rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #00c6ff;
 }
 
 .edu-course {
   font-size: 1rem;
-  color: #1f0a7c;
-  margin-bottom: 0.2rem;
+  margin: 5px 0;
+  color: #fff;
 }
 
 .edu-meta {
   font-size: 0.9rem;
-  color: #cccccc;
+  color: #ccc;
 }
 
-/* Right side - year, score, chevron */
+/* Right Side Info */
 .edu-right {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 0.3rem;
+  text-align: right;
+  font-size: 0.85rem;
+  color: #fff;
 }
 
-.edu-year, .edu-score {
-  color: #111996;
-  font-weight: 500;
-  font-size: 0.95rem;
+.edu-year {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 5px;
 }
 
+.edu-score {
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Chevron Toggle */
 .chevron {
   display: inline-block;
-  width: 0;
-  height: 0;
-  margin-top: 5px;
-  border-left: 6px solid transparent;
-  border-right: 6px solid transparent;
-  border-top: 6px solid #ffffff;
+  width: 12px;
+  height: 12px;
+  border-right: 2px solid #00c6ff;
+  border-bottom: 2px solid #00c6ff;
+  transform: rotate(45deg);
+  margin-left: 10px;
   transition: transform 0.3s ease;
 }
 
 .chevron.up {
-  transform: rotate(180deg);
+  transform: rotate(-135deg);
 }
 
-/* Expanded Card Body */
+/* Expanded Body */
 .edu-body {
-  margin-top: 1rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.3);
-  padding-top: 1rem;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  animation: fadeIn 0.5s ease-in-out;
 }
 
 .edu-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
 }
 
-.edu-info, .edu-highlights {
-  flex: 1;
-  min-width: 250px;
-  color: #1925c5;
-}
-
-.edu-info p {
-  margin: 0.3rem 0;
-  font-size: 0.95rem;
-}
-
-.edu-info strong {
-  color: #40309c;
+.edu-info p, .edu-highlights ul {
+  margin: 5px 0;
+  font-size: 0.9rem;
+  color: #ddd;
 }
 
 .edu-highlights strong {
-  font-size: 1rem;
+  color: #00c6ff;
+  margin-bottom: 5px;
   display: block;
-  margin-bottom: 0.5rem;
 }
 
 .edu-highlights ul {
-  list-style-type: disc;
-  padding-left: 1.2rem;
+  padding-left: 20px;
 }
 
 .edu-highlights li {
-  margin-bottom: 0.3rem;
-  font-size: 0.95rem;
+  margin-bottom: 5px;
+  line-height: 1.4;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
   .edu-grid {
-    flex-direction: column;
+    grid-template-columns: 1fr;
   }
+}
 
-  .edu-right {
-    align-items: flex-start;
-    margin-top: 0.5rem;
-  }
+/* Animation */
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(-10px);}
+  to {opacity: 1; transform: translateY(0);}
 }

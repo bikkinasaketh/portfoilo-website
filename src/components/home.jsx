@@ -1,7 +1,8 @@
 import React from "react";
 import "./Home.css";
-import heroImg from "../assets/images/host.jpg";   // <-- import image
-import { FaGithub, FaLinkedin } from "react-icons/fa"; // <-- import icons
+import heroImg from "../assets/images/host.jpg";
+import { FaGithub, FaLinkedin } from "react-icons/fa"; 
+import { SiGmail } from "react-icons/si"; // <-- Gmail icon
 
 const Home = () => {
   return (
@@ -10,7 +11,7 @@ const Home = () => {
         {/* Left Section (Image) */}
         <div className="hero-left">
           <img
-            src={heroImg}   // <-- use imported image
+            src={heroImg}
             alt="Bikkina Bhuvan Saketh"
             className="hero-img"
           />
@@ -50,6 +51,14 @@ const Home = () => {
               aria-label="GitHub"
             >
               <FaGithub className="social-icon" />
+            </a>
+            <a
+              href="mailto:sakethbikina663@gmail.com"  // <-- replace with your Gmail
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Gmail"
+            >
+              <SiGmail className="social-icon" />
             </a>
           </div>
         </div>

@@ -1,58 +1,85 @@
-import React from "react";
+import React, { useState } from "react";
 import "./experience.css";
+
+// Import images
+import globalOneImg from "../assets/images/saketh python.png";
+import technicalHubImg from "../assets/images/full stack web certificate.jpg";
+import adhocImg from "../assets/images/sakethNptelcertificate.jpeg";
+import apexImg from "../assets/images/apex certificate.jpeg";
+import skillDzireImg from "../assets/images/skill dzire.jpeg";
+import mlInternImg from "../assets/images/python data science .jpg"; // 👈 new image
 
 const experiences = [
   {
     company: "Gobal One Services",
-    role: "Python Full Stack Development ",
-    location: "Rajahmundry / Hyderabad",
+    role: "Python Full Stack Development",
     duration: "Feb 2024 – May 2024",
-    details:
-      "Completed 240 hours internship on Python Full Stack organized by Gobal One Services, Hyderabad in collaboration with Andhra Pradesh State Council of Higher Education.",
+    certificate: globalOneImg,
   },
   {
     company: "Technical Hub",
-    role: "Full Stack Web Development ",
-    location: "Surampalem",
+    role: "Full Stack Web Development",
     duration: "May 2025 – June 2025",
-    details: "Successfully completed Full Stack Web Development Internship.",
+    certificate: technicalHubImg,
   },
   {
     company: "Adhoc Network Tech Company",
     role: "Core Java Development",
-    location: "Rajahmundry",
     duration: "Sep 2023 – Oct 2023",
-    details: "Completed Core Java Development Internship.",
+    certificate: adhocImg,
   },
   {
     company: "Apex Software Tech Company",
-    role: "Front-End Development ",
-    location: "Rajahmundry",
+    role: "Front-End Development",
     duration: "May 2025 – July 2025",
-    details: "Successfully completed Front-End Development Internship.",
+    certificate: apexImg,
   },
   {
     company: "SkillDzire",
-    role: "Data Science ",
-    location: "Rajahmundry",
+    role: "Data Science",
     duration: "May 2025 – July 2025",
-    details: "Successfully completed Data Science Internship.",
+    certificate: skillDzireImg,
+  },
+  {
+    company: "Technohacks",   // 👈 new entry
+    role: "Full Stack Web Development",
+    duration: "aug 2025 – sep 2025",
+    certificate: mlInternImg,
   },
 ];
 
+
 const Experience = () => {
+  const [flippedIndex, setFlippedIndex] = useState(null);
+
+  const handleFlip = (index) => {
+    setFlippedIndex(flippedIndex === index ? null : index);
+  };
+
   return (
     <section id="experience">
       <h2 className="section-title">Experience</h2>
       <div className="experience-container">
         {experiences.map((exp, index) => (
-          <div className="experience-card" key={index}>
-            <h3 className="role">{exp.role}</h3>
-            <p className="company">{exp.company}</p>
-            <p className="meta">
-              📍 {exp.location} &nbsp; | &nbsp; 📅 {exp.duration}
-            </p>
-            <p className="details">{exp.details}</p>
+          <div
+            key={index}
+            className={`flip-card ${flippedIndex === index ? "flipped" : ""}`}
+            onClick={() => handleFlip(index)}
+          >
+            <div className="flip-card-inner">
+              {/* Front Face */}
+              <div className="flip-card-front">
+                <h3>{exp.role}</h3>
+                <p>{exp.company}</p>
+                <p>{exp.duration}</p>
+                <p className="click-text">Click Me for Certificate</p>
+              </div>
+
+              {/* Back Face */}
+              <div className="flip-card-back">
+                <img src={exp.certificate} alt={exp.company} />
+              </div>
+            </div>
           </div>
         ))}
       </div>
