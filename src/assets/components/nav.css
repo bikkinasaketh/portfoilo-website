@@ -1,0 +1,81 @@
+/* Navbar container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #0a0a0a;
+  padding: 12px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Logo */
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  letter-spacing: 1.5px;
+}
+
+/* Navigation links */
+.nav-links {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 20px; /* increased from 16px to 20px */
+  padding: 10px 16px; /* slightly bigger padding */
+  border-radius: 5px;
+  transition: background 0.3s, color 0.3s;
+}
+
+
+.nav-links a:hover {
+  background: #fff;
+  color: #222;
+}
+
+/* Hamburger menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 60px;
+    right: -100%;
+    width: 200px;
+    height: 100vh;
+    background: #222;
+    flex-direction: column;
+    padding: 50px 20px;
+    gap: 20px;
+    transition: right 0.3s ease-in-out;
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+}

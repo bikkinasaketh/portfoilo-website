@@ -1,0 +1,128 @@
+/* Certifications Section */
+#certifications {
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #1a1a2e, #16213e); /* same as experience */
+  color: #fff;
+  text-align: center;
+}
+
+/* Section Title */
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #00c6ff; /* cyan like experience */
+}
+
+/* Container */
+.cert-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+}
+
+/* Flip Card */
+.flip-card {
+  background: transparent;
+  flex: 1 1 calc(33.33% - 25px); /* 3 per row on desktop */
+  max-width: calc(33.33% - 25px);
+  height: 350px;
+  perspective: 1500px;
+  cursor: pointer;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Front & Back */
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(18px) saturate(180%);
+  -webkit-backdrop-filter: blur(18px) saturate(180%);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Front Face */
+.flip-card-front h3 {
+  color: #00c6ff; /* same as experience */
+  margin-bottom: 10px;
+}
+.flip-card-front p {
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  color: #e0e0e0;
+}
+
+/* Button for Certificate */
+.certificate-btn {
+  margin-top: 15px;
+  padding: 10px 18px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.certificate-btn:hover {
+  background: linear-gradient(135deg, #ff66c4, #ff3385);
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Back Face */
+.flip-card-back {
+  transform: rotateY(180deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.flip-card-back img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .flip-card {
+    flex: 1 1 calc(50% - 20px); /* 2 per row on tablets */
+    max-width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 600px) {
+  .flip-card {
+    flex: 1 1 100%; /* 1 per row on mobile */
+    max-width: 100%;
+  }
+}

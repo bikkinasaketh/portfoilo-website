@@ -1,0 +1,150 @@
+/* === Education Section with Glassmorphism === */
+.education-section {
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+}
+
+.section-heading {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  letter-spacing: 1px;
+  color: #00c6ff;
+}
+
+/* Cards Container */
+.edu-cards {
+  display: grid;
+  gap: 25px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Individual Card */
+.edu-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(18px) saturate(180%);
+  -webkit-backdrop-filter: blur(18px) saturate(180%);
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 25px;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.edu-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Card Header */
+.edu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.edu-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #00c6ff;
+}
+
+.edu-course {
+  font-size: 1rem;
+  margin: 5px 0;
+  color: #fff;
+}
+
+.edu-meta {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+/* Right Side Info */
+.edu-right {
+  text-align: right;
+  font-size: 0.85rem;
+  color: #fff;
+}
+
+.edu-year {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.edu-score {
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Chevron Toggle */
+.chevron {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-right: 2px solid #00c6ff;
+  border-bottom: 2px solid #00c6ff;
+  transform: rotate(45deg);
+  margin-left: 10px;
+  transition: transform 0.3s ease;
+}
+
+.chevron.up {
+  transform: rotate(-135deg);
+}
+
+/* Expanded Body */
+.edu-body {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.edu-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.edu-info p, .edu-highlights ul {
+  margin: 5px 0;
+  font-size: 0.9rem;
+  color: #ddd;
+}
+
+.edu-highlights strong {
+  color: #00c6ff;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.edu-highlights ul {
+  padding-left: 20px;
+}
+
+.edu-highlights li {
+  margin-bottom: 5px;
+  line-height: 1.4;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .edu-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(-10px);}
+  to {opacity: 1; transform: translateY(0);}
+}
