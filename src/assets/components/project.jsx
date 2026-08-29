@@ -11,7 +11,7 @@ const projects = [
     title: "Complaint Management System",
     description: "Full-stack React app for submitting and tracking complaints with admin panel.",
     image: cmsImg,
-    demo: "https://campus-egxh.vercel.app//",
+    demo: "https://electricial-website.vercel.app/",
     github: "https://github.com/bikkinasaketh/campus/",
   },
   {
