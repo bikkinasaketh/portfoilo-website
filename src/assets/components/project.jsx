@@ -4,6 +4,7 @@ import "./project.css";
 // Import project images
 import cmsImg from "../images/cmse.jpg";
 import sportsHubImg from "../images/smart .png";
+import freelancerImg from "../images/freelancer.png";
 
 
 const projects = [
@@ -21,6 +22,15 @@ const projects = [
     demo: "https://smartcrop-10.onrender.com/",
     github: "https://github.com/bikkinasaketh/smartcrop",
   },
+  {
+  title: "Smart Freelancer Project & Client Management System",
+  description:
+    "Full-stack web application for managing freelancers, clients, and projects with secure authentication, role-based access, and REST APIs.",
+  image: freelancerImg,
+  demo: "https://freelance-frotend.netlify.app/",
+  github: "https://github.com/bikkinasaketh/freelance-frontend",
+}
+
 ];
 
 const Projects = () => {
