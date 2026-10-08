@@ -4,7 +4,7 @@ import "./project.css";
 // Import project images
 import cmsImg from "../images/cmse.jpg";
 import sportsHubImg from "../images/smart .png";
-import freelancerImg from "../images/freelancer.png";
+import freelancerImg from "../images/freelancer.jfif";
 
 
 const projects = [
