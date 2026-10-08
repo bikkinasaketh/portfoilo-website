@@ -17,7 +17,7 @@ const projects = [
   },
   {
     title: "Smart Crop recomendation system using Ml& iot",
-    description: "React app for sports quizzes, jokes, and interactive content.",
+    description: "AI-powered crop recommendation system that uses Machine Learning and IoT-based environmental and soil data to recommend the most suitable crops for better agricultural productivity..",
     image: sportsHubImg,
     demo: "https://smartcrop-10.onrender.com/",
     github: "https://github.com/bikkinasaketh/smartcrop",
